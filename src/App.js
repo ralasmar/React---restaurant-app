@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import './style.css';
 import { NewPostForm } from "./components/NewPostForm";
 import { RestaurantList } from "./components/RestaurantList";
@@ -20,7 +20,7 @@ export default function App() {
     setPosts(currentPosts => {
       return [
         ...currentPosts,
-        { id: crypto.randomUUID(), name, city, img, rating},
+        { id: crypto.randomUUID(), name, city, img, rating}
       ]
     })
   }
@@ -30,7 +30,6 @@ export default function App() {
       return currentPosts.filter(post => post.id !== id)
     })
   }
-
 
   return (
     <>

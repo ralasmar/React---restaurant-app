@@ -15,3 +15,35 @@ body {
     border-radius: 50px;
     cursor: pointer;
 }
+
+.new-post-form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+    
+}
+
+.form--name{
+    margin: 5px;
+}
+
+.form--city{
+    margin: 5px;
+}
+
+.form--img{
+    margin: 5px;
+}
+
+.form--rating{
+    margin: 5px;
+}
+
+.add-btn{
+    background-color: rgb(114, 219, 114);
+    border-color: rgb(114, 219, 114);
+    border-radius: 12px;
+    padding: 5px;
+    cursor: pointer;
+}

@@ -29,6 +29,7 @@ export function NewPostForm({onSubmit}){
                 onChange={event => setNewPost({...newPost, name: event.target.value})} 
                 type="text"
                 id="name"
+                placeholder="Enter Restaurant"
             />
             <input 
                 className="form--city"
@@ -36,6 +37,7 @@ export function NewPostForm({onSubmit}){
                 onChange={event => setNewPost({...newPost, city: event.target.value})} 
                 type="text"
                 id="city"
+                placeholder="Enter City"
             />
             <input 
                 className="form--img"
@@ -43,15 +45,16 @@ export function NewPostForm({onSubmit}){
                 onChange={event => setNewPost({...newPost, img: event.target.value})} 
                 type="text"
                 id="img"
+                placeholder="Enter Image Url"
             />
             <input 
                 className="form--rating"
                 value={newPost.rating}
                 onChange={event => setNewPost({...newPost, rating: event.target.value})} 
-                type="text"
+                type="input"
                 id="rating"
             />
-            <button className="add-btn">Add</button>
+            <button className="add-btn">Add Restaurant</button>
         </form>
     )
 }
