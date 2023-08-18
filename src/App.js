@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <>
-      <h1>Restaurant App</h1>
+      <h1 className="app-heading">Restaurant App</h1>
       <NewPostForm onSubmit={addPost} />
       <RestaurantList posts={posts} deletePost={deletePost} />
     </> 

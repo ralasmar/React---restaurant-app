@@ -6,9 +6,11 @@ export function Card({id, name, city, img, rating, deletePost}){
             <div className="restaurant-card">
                 <img className="card--image" src={`${img}`} alt=""/>
                 <div className="card--info">
-                    name
-                    city
-                    rating
+                    {name}
+                    <br />
+                    {city}
+                    <br />
+                    {rating}
                 </div>
             </div>
             
