@@ -47,13 +47,21 @@ export function NewPostForm({onSubmit}){
                 id="img"
                 placeholder="Enter Image Url"
             />
-            <input 
+            <label for="form--rating">Select Rating</label>
+            <select
                 className="form--rating"
                 value={newPost.rating}
                 onChange={event => setNewPost({...newPost, rating: event.target.value})} 
                 type="input"
                 id="rating"
-            />
+            >
+                <option value='★☆☆☆☆'>1 Star</option>
+                <option value='★★☆☆☆'>2 Stars</option>
+                <option value='★★★☆☆'>3 Stars</option>
+                <option value='★★★★☆'>4 Stars</option>
+                <option value='★★★★★'>5 Stars</option>
+                <option value="★Have not visited!★">Haven't visited yet!</option>
+            </select>
             <button className="add-btn">Add Restaurant</button>
         </form>
     )

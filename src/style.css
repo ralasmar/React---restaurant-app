@@ -6,16 +6,26 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Karla', sans-serif;
-    background-color: rgb(232, 232, 174);
+    background-color:white;
+}
+
+body.dark{
+    background-color: grey;
 }
 
 .app-heading{
     display: flex;
     justify-content: center;
+    color: purple;
+}
+
+.home-pic{
+    width: 150px;
+    justify-content: center;
 }
 
 .card--image {
-    width: 400px;
+    width: 450px;
     height: 300px;
     padding: 20px;
     margin: 20px;
@@ -49,8 +59,9 @@ body {
 }
 
 .add-btn{
-    background-color: rgb(114, 219, 114);
-    border-color: rgb(114, 219, 114);
+    background-color: purple;
+    border-color: purple;
+    color: white;
     border-radius: 12px;
     padding: 5px;
     cursor: pointer;
@@ -61,6 +72,9 @@ body {
     display: flex;
     padding-left: 40px;
     justify-content: center;
+    background-color: yellow;
+    margin: 20px;
+    border-radius: 20px;
 }
 
 .btn-danger {
@@ -78,4 +92,77 @@ body {
 .card-area{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.toggler {
+    display: flex;
+    align-items: center;
+}
+
+.toggler p {
+    font-size: 0.625rem;
+    font-weight: 600;
+}
+
+.toggler--slider {
+    width: 25px;
+    height: 13px;
+    background-color: #2B283A;
+    border-radius: 2rem;
+    margin-inline: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: content-box;
+}
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px 25px;
+    height: 60px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+}
+nav.dark {
+    background-color: #21222A;
+}
+
+nav.dark .toggler--slider {
+    border-color: white;
+    background-color: #F5F5F5;
+}
+
+.toggler--slider--circle {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+nav.dark .toggler--slider--circle {
+    background-color: black;
+}
+
+.toggler--light {
+    color: #2B283A;
+}
+
+nav.dark .toggler--light {
+    color: #918E9B;
+}
+
+.toggler--dark {
+    color: #D5D4D8;
+}
+
+nav.dark .toggler-dark {
+    color: #FFFFFF;
+}
+
+nav.dark .toggler--slider {
+    justify-content: flex-end;
 }

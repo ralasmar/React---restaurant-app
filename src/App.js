@@ -1,9 +1,17 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import './style.css';
 import { NewPostForm } from "./components/NewPostForm";
 import { RestaurantList } from "./components/RestaurantList";
+import { Navbar } from "./components/Navbar";
 
 export default function App() {
+
+  const [darkMode, setDarkMode] = React.useState(true)
+
+  function toggleDarkMode(){
+    setDarkMode(prevMode => !prevMode)
+  }
+
   const [posts, setPosts] = useState(() => {
     const localValue = localStorage.getItem("CARDS")
     if (localValue == null) return []
@@ -34,8 +42,9 @@ export default function App() {
   return (
     <>
       <h1 className="app-heading">Restaurant App</h1>
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
       <NewPostForm onSubmit={addPost} />
-      <RestaurantList posts={posts} deletePost={deletePost} />
+      <RestaurantList posts={posts} deletePost={deletePost} darkMode={darkMode}/>
     </> 
   )
 }
