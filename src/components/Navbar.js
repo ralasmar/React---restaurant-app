@@ -1,6 +1,8 @@
 import React from "react"
 
+
 export function Navbar(props){
+
     return(
         <nav className={props.darkMode ? "dark": ""}>
             <div className="toggler">

@@ -1,6 +1,7 @@
+import { Favorite } from "./Favorite"
 
 export function Card({id, name, city, img, rating, deletePost}){
-
+    
     return (
         <section key={id}>
             <div className="restaurant-card">
@@ -11,7 +12,9 @@ export function Card({id, name, city, img, rating, deletePost}){
                     {city}
                     <br />
                     {rating}
+                    <Favorite />
                 </div>
+                
             </div>
             
             <button onClick={() => deletePost(id)} className="btn btn-danger">Delete</button>

@@ -47,7 +47,7 @@ export function NewPostForm({onSubmit}){
                 id="img"
                 placeholder="Enter Image Url"
             />
-            <label for="form--rating">Select Rating</label>
+            <label htmlFor="form--rating">Select Rating</label>
             <select
                 className="form--rating"
                 value={newPost.rating}

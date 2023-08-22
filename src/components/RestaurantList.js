@@ -3,7 +3,7 @@ import { Card } from "./Card"
 export function RestaurantList({ posts, deletePost }){
     return(
         <>
-        <main className={posts.darkMode ? "dark":""}>
+        <main className={posts.darkMode ? "dark": ""}>
             <section className="card-area" >
             {posts.length === 0 && "No Restaurants Added"}
             {posts.map(post => {
