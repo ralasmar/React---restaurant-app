@@ -1,4 +1,5 @@
 import React from "react"
+import { Searchbar } from "./Searchbar"
 
 
 export function Navbar(props){
@@ -11,7 +12,9 @@ export function Navbar(props){
                     <div className="toggler--slider--circle"></div>
                 </div>
                 <p className="toggler--dark">Dark</p>
+                <Searchbar darkMode={props.darkMode} />
             </div>
+            
         </nav>
     )
 }

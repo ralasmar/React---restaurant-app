@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import '@fortawesome/fontawesome-free/css/all.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaStar } from 'react-icons/fa'
 
 export function Favorite(props){
     const [isClicked, setIsClicked] = useState(false)
@@ -19,14 +22,16 @@ export function Favorite(props){
         };
 
     const styles = {
-        backgroundColor: isClicked ? "purple" : "yellow"
+        color: isClicked ? "purple" : "#D0D0D0"
     }
     return (
+    <>
         <div
-            className="heart-icon"
+            className="fa-solid fa-star"
             style={styles}
             onClick={clickFavorite}
-        >&#9825;
-        </div>
+        />
+    </>
+        
     )
 }

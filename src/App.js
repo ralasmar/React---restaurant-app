@@ -49,8 +49,8 @@ export default function App() {
     <>
       <h1 className="app-heading">Restaurant App</h1>
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
-      <Searchbar />
-      <NewPostForm onSubmit={addPost} />
+      {/* <Searchbar darkMode={darkMode} /> */}
+      <NewPostForm onSubmit={addPost} darkMode={darkMode} />
       <RestaurantList posts={posts} deletePost={deletePost} darkMode={darkMode}/>
     </> 
   )

@@ -1,12 +1,12 @@
 import { Card } from "./Card"
 
-export function RestaurantList({ posts, deletePost }){
+export function RestaurantList(props){
     return(
         <>
-        <main className={posts.darkMode ? "dark": ""}>
+        <main className={props.darkMode ? "dark": ""}>
             <section className="card-area" >
-            {posts.length === 0 && "No Restaurants Added"}
-            {posts.map(post => {
+            {props.posts.length === 0 && "No Restaurants Added"}
+            {props.posts.map(post => {
                 return (
                     <Card
                         id={post.id}
@@ -15,7 +15,7 @@ export function RestaurantList({ posts, deletePost }){
                         img={post.name.img}
                         rating={post.name.rating}
                         key={post.id}
-                        deletePost={deletePost}
+                        deletePost={props.deletePost}
                     />
                 )
             })}

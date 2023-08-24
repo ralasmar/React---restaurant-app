@@ -7,7 +7,7 @@ const getFilteredItems = (query, items) => {
     return items.filter(item => item.city.includes(query.value));
   }
 
-export function Searchbar(){
+export function Searchbar(props){
   const [query, setQuery] = useState("");
 
   const citiesData = JSON.parse(localStorage.getItem("CITIES")) || []
@@ -17,7 +17,7 @@ export function Searchbar(){
 
   
   return (
-    <>
+    <body className={props.darkMode ? "dark": ""}>
      <input className='search-bar' type="text" onChange={(e) => setQuery(e.target.value)}/>
       <ul>
         {filteredItems.map(value => (
@@ -29,7 +29,7 @@ export function Searchbar(){
         type="submit"
         onClick={() => getFilteredItems()}
       >Go</button>
-    </>
+    </body>
   )
 }
 

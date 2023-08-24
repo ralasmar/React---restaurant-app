@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export function NewPostForm({onSubmit}){
+export function NewPostForm(props){
     const [newPost, setNewPost] = useState(
         {
             name: "",
@@ -15,14 +15,14 @@ export function NewPostForm({onSubmit}){
         event.preventDefault()
         if(newPost.name === "" || newPost.city === "" || newPost.img === "" || newPost.rating === "") return 
 
-        onSubmit(newPost)
+        props.onSubmit(newPost)
 
         setNewPost("")
     }
 
 
     return (
-        <form onSubmit={handleSubmit} className="new-post-form">
+        <form className={props.darkMode ? "dark": ""} onSubmit={handleSubmit}>
             <input 
                 className="form--name"
                 value={newPost.name}
