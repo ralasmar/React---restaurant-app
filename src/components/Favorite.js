@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import '@fortawesome/fontawesome-free/css/all.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { FaStar } from 'react-icons/fa'
 
-export function Favorite(props){
+export function Favorite(){
     const [isClicked, setIsClicked] = useState(false)
 
     useEffect(() => {
         const savedIsClicked = localStorage.getItem("isClicked");
-        if (savedIsClicked == !null){
+        if (savedIsClicked !== null){
             setIsClicked(JSON.parse(savedIsClicked));
         }
     },[]);

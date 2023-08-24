@@ -14,7 +14,6 @@ export function Navbar(props){
                 <p className="toggler--dark">Dark</p>
                 <Searchbar darkMode={props.darkMode} />
             </div>
-            
         </nav>
     )
 }
