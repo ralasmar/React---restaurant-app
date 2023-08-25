@@ -11,7 +11,7 @@ export function Navbar(props){
                 <div className="toggler--slider" onClick={props.toggleDarkMode}>
                     <div className="toggler--slider--circle"></div>
                 </div>
-                <p className="toggler--dark">Dark</p>
+                <p className="toggler--dark">Dark</p> 
                 <Searchbar darkMode={props.darkMode} onSearchResults={props.onSearchResults} />
             </div>
         </nav>

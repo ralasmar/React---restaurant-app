@@ -52,7 +52,7 @@ export function NewPostForm(props){
                 id="img"
                 placeholder="Enter Image Url"
             />
-            <label htmlFor="form--rating">Select Rating</label>
+            {/* <label htmlFor="form--rating">Select Rating</label> */}
             <select
                 className="form--rating"
                 value={newPost.rating}
@@ -60,6 +60,7 @@ export function NewPostForm(props){
                 type="input"
                 id="rating"
             >
+                <option value='☆☆☆☆☆'>--Select Rating--</option>
                 <option value='★☆☆☆☆'>1 Star</option>
                 <option value='★★☆☆☆'>2 Stars</option>
                 <option value='★★★☆☆'>3 Stars</option>
