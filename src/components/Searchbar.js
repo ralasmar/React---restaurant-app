@@ -1,35 +1,63 @@
 import React, { useState } from 'react';
+import { Card } from "./Card"
 
-const getFilteredItems = (query, items) => {
-    if (!query){
-      return items;
-    }
-    return items.filter(item => item.city.includes(query.value));
-  }
+// const getFilteredItems = (query, items) => {
+//     if (!query){
+//       return items;
+//     }
+//     return items.filter(item => item.city.includes(query.value));
+//   }
 
 export function Searchbar(props){
   const [query, setQuery] = useState("");
+  // const [queryResults, setQueryResults] = useState([])
 
-  const citiesData = JSON.parse(localStorage.getItem("CITIES")) || []
-  const  items  = citiesData.cities || [];
+  const handleSearch = () => {
+    console.log("button clicked")
+    let results = [];
 
-  const filteredItems = getFilteredItems(query, items)
+     // const key = localStorage.key("CARDS");
+      
+     const items = JSON.parse(localStorage.getItem("CARDS"))
+
+    for(let i=0; i < items.length; i++){
+      if (items[i] && items[i].name && items[i].name.city.includes(query)){
+        console.log("HELLLO??")
+        results.push(items[i]);
+      }
+    }
+    props.onSearchResults(results)
+  }
+
+  // console.log(queryResults)
 
   
   return (
-    <body className={props.darkMode ? "dark": ""}>
-     <input className='search-bar' type="text" onChange={(e) => setQuery(e.target.value)}/>
-      <ul>
+    <div  id="search-bar" className={props.darkMode ? "dark": ""}>
+     <input 
+        className='search-bar' 
+        type="text" 
+        value={query}
+        onChange={(e) => {setQuery(e.target.value);
+        console.log("Input value:", e.target.value);
+        }}
+        placeholder='Search for a city'/>
+      {/* <ul>
         {filteredItems.map(value => (
           <h1 key={value.city}>{value}</h1>
         ))}
-      </ul>
+      </ul> */}
       <button 
         className="search-btn" 
         type="submit"
-        onClick={() => getFilteredItems()}
+         onClick={() => handleSearch(query)}
       >Go</button>
-    </body>
+      {/* <div>
+        {queryResults.map((result, index) => (
+          <Card id={result.id} name={result.name.name} city={result.name.city} img={result.name.img} key={index} rating={result.name.rating}/>
+        ))}
+      </div> */}
+    </div>
   )
 }
 

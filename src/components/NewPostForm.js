@@ -13,11 +13,16 @@ export function NewPostForm(props){
 
     function handleSubmit(event){
         event.preventDefault()
-        if(newPost.name === "" || newPost.city === "" || newPost.img === "" || newPost.rating === "") return 
+        // if(newPost.name === "" || newPost.city === "" || newPost.img === "" || newPost.rating === "") return 
 
         props.onSubmit(newPost)
 
-        setNewPost("")
+        setNewPost({
+            name: "",
+            img: "",
+            city: "",
+            rating: ""
+        })
     }
 
 

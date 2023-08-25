@@ -173,7 +173,7 @@ nav.dark .toggler--slider {
     display: flex;
 }
 
-body.dark{
+#search-bar.dark{
     background-color: rgb(45, 28, 75);
 }
 
