@@ -5,15 +5,16 @@ export function Searchbar(props){
   const [query, setQuery] = useState("");
   // const [queryResults, setQueryResults] = useState([])
 
-  const handleSearch = () => {
+  const handleSearch = (query) => {
     console.log("button clicked")
     let results = [];
 
       
      const items = JSON.parse(localStorage.getItem("CARDS"))
+     console.log(items)
 
     for(let i=0; i < items.length; i++){
-      if (items[i] && items[i].name && items[i].name.city.includes(query)){
+      if (items[i] && items[i].name && items[i].name.city.toLowerCase().includes(query)){
         console.log("HELLLO??")
         results.push(items[i]);
       }

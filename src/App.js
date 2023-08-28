@@ -8,6 +8,7 @@ import { Searchbar } from "./components/Searchbar";
 
 export default function App() {
 
+  console.log("hello")
   const [darkMode, setDarkMode] = React.useState(false)
 
   // const [query, setQuery] = useState("");
@@ -22,9 +23,9 @@ export default function App() {
   })
 
 
-  useEffect(() => {
-    localStorage.setItem("CARDS", JSON.stringify(posts))
-  }, [posts])
+  // useEffect(() => {
+  //   localStorage.setItem("CARDS", JSON.stringify(posts))
+  // }, [posts])
   
   
 
@@ -36,11 +37,12 @@ export default function App() {
   function addPost(name, city, img, rating){
     console.log("entered addPost")
     setPosts(currentPosts => {
-      return [
-        //...currentPosts,
+      const newPosts = [
         { id: crypto.randomUUID(), name, city, img, rating},
         ...currentPosts
       ]
+      localStorage.setItem("CARDS", JSON.stringify(newPosts))
+      return newPosts
     })
     alert("Restaurant Added")
   }

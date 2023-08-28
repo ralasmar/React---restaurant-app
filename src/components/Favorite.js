@@ -2,19 +2,19 @@ import React, { useEffect, useState } from "react";
 import '@fortawesome/fontawesome-free/css/all.css'
 
 export function Favorite(){
-    const [isClicked, setIsClicked] = useState(() => {
+    const [isClicked, setIsClicked] = useState(false)
+
+    useEffect(() => {
         const savedIsClicked = localStorage.getItem("isClicked");
-        if (savedIsClicked == null){
-            return [];
+        if (savedIsClicked){
+            setIsClicked(JSON.parse(savedIsClicked));
         }
-        return JSON.parse(savedIsClicked)
-    })
-
-
+    },[]);
 
     useEffect(() => {
         localStorage.setItem("isClicked", JSON.stringify(isClicked))
     }, [isClicked]);
+
 
     const clickFavorite = () => {
         setIsClicked(prevIsClicked => !prevIsClicked);
