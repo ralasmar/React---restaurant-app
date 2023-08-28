@@ -25,7 +25,7 @@ export function Searchbar(props){
   
   return (
     <div  id="search-bar" className={props.darkMode ? "dark": ""}>
-    <div style="{display:flex ; flex-direction: row ; margin: 4px}">
+    <div style={{ display:'flex', flexDirection: 'row', margin: '4px' }}>
      <input 
         className='search-bar' 
         type="text" 
