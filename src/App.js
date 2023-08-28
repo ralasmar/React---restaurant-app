@@ -14,38 +14,19 @@ export default function App() {
   
   const [posts, setPosts] = useState(() => {
     const localValue = localStorage.getItem("CARDS")
-    if (localValue == null) return []
-
+    if (localValue == null) {
+      return []
+    }
+    
     return JSON.parse(localValue)
   })
 
 
-
-  // useEffect(() => {
-  //   localStorage.setItem("CARDS", JSON.stringify(posts))
-  // }, [posts])
+  useEffect(() => {
+    localStorage.setItem("CARDS", JSON.stringify(posts))
+  }, [posts])
   
   
-  // function handleSearch(query){
-  //   console.log("button clicked")
-  //   let results = [];
-
-  //    // const key = localStorage.key("CARDS");
-      
-  //    const items = JSON.parse(localStorage.getItem("CARDS"))
-
-  //   for(let i=0; i < items.length; i++){
-  //     if (items[i] && items[i].name && items[i].name.city.includes(query)){
-  //       console.log("HELLLO??")
-  //       results.push(items[i]);
-  //     }
-  //   }
-  //   console.log(results)
-  //   // setQueryResults(results);
-  //   // setPosts(queryResults)
-  // }
-
-  // console.log(queryResults)
 
   function toggleDarkMode(){
     setDarkMode(prevMode => !prevMode)
