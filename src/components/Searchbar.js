@@ -14,7 +14,7 @@ export function Searchbar(props){
      console.log(items)
 
     for(let i=0; i < items.length; i++){
-      if (items[i] && items[i].name && items[i].name.city.toLowerCase().includes(query)){
+      if (items[i] && items[i].name && items[i].name.city.toLowerCase().includes(query.toLowerCase())){
         console.log("HELLLO??")
         results.push(items[i]);
       }
@@ -25,7 +25,7 @@ export function Searchbar(props){
   
   return (
     <div  id="search-bar" className={props.darkMode ? "dark": ""}>
-    <form className='search-form'>
+    <div style="{display:flex ; flex-direction: row ; margin: 4px}">
      <input 
         className='search-bar' 
         type="text" 
@@ -39,7 +39,7 @@ export function Searchbar(props){
         type="submit"
          onClick={() => handleSearch(query)}
       >Go</button>
-      </form>
+    </div>
     </div>
   )
 }

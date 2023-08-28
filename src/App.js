@@ -8,7 +8,6 @@ import { Searchbar } from "./components/Searchbar";
 
 export default function App() {
 
-  console.log("hello")
   const [darkMode, setDarkMode] = React.useState(false)
 
   // const [query, setQuery] = useState("");
