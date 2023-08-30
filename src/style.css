@@ -73,6 +73,7 @@ form.dark{
     background-color: yellow;
     min-height: 60px;
     margin: 20px;
+    margin-bottom: 5px;
     border-radius: 20px;
 }
 
@@ -86,7 +87,6 @@ form.dark{
     margin-left: 40px;
     justify-content: center;
     margin-bottom: 20px;
-    
 }
 
 .card-area{
@@ -229,4 +229,4 @@ nav.dark .toggler--slider {
     cursor: pointer;
     align-items: center;
 }
-    
+

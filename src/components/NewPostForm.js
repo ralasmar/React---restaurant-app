@@ -13,7 +13,6 @@ export function NewPostForm(props){
 
     function handleSubmit(event){
         event.preventDefault()
-        // if(newPost.name === "" || newPost.city === "" || newPost.img === "" || newPost.rating === "") return 
 
         props.onSubmit(newPost)
 
@@ -52,7 +51,7 @@ export function NewPostForm(props){
                 id="img"
                 placeholder="Enter Image Url"
             />
-            {/* <label htmlFor="form--rating">Select Rating</label> */}
+        
             <select
                 className="form--rating"
                 value={newPost.rating}

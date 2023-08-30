@@ -9,8 +9,6 @@ import { Searchbar } from "./components/Searchbar";
 export default function App() {
 
   const [darkMode, setDarkMode] = React.useState(false)
-
-  // const [query, setQuery] = useState("");
   
   const [posts, setPosts] = useState(() => {
     const localValue = localStorage.getItem("CARDS")
